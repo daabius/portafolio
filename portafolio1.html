@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dalia Abigail Uscanga Gutiérrez | Portafolio de Ciencia de Datos</title>
+  
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Paleta Clásica: Beige, Arena, Azul Marino Profundo y Azul Petróleo */
+      --bg-surface: #f7f5f0;
+      --bg-card: #ffffff;
+      --bg-card-accent: #f0ebe1;
+      
+      --border-soft: #e2dacd;
+      --border-strong: #c2b59b;
+      
+      --primary-navy: #1b2a4a;
+      --secondary-teal: #2c5282;
+      --accent-sand: #8c7355;
+      
+      --text-main: #222222;
+      --text-muted: #555555;
+      --code-bg: #efebe4;
+
+      --badge-team-bg: #e8f0fe;
+      --badge-team-border: #b6d4fe;
+      --badge-team-text: #1b2a4a;
+
+      --badge-indiv-bg: #e6f4ea;
+      --badge-indiv-border: #a8dab5;
+      --badge-indiv-text: #137333;
+
+      --badge-award-bg: #fef3c7;
+      --badge-award-border: #fde68a;
+      --badge-award-text: #78350f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      padding: 4rem 0 2.5rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .badge-pill {
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      border-radius: 4px;
+      background: var(--bg-card-accent);
+      border: 1px solid var(--border-strong);
+      color: var(--primary-navy);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+      color: var(--primary-navy);
+    }
+
+    .hero-title span {
+      color: var(--secondary-teal);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .presentation-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      border-left: 5px solid var(--primary-navy);
+      box-shadow: 0 4px 12px rgba(27, 42, 74, 0.03);
+    }
+
+    .presentation-box h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.6rem;
+    }
+
+    .presentation-text {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-mail {
+      background: var(--primary-navy);
+      color: #ffffff;
+      border: 1px solid var(--primary-navy);
+    }
+
+    .btn-mail:hover {
+      background: var(--secondary-teal);
+      border-color: var(--secondary-teal);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      color: var(--primary-navy);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-card-accent);
+    }
+
+    .btn-external {
+      background: var(--bg-card-accent);
+      border: 1px solid var(--border-strong);
+      color: var(--primary-navy);
+      font-weight: 600;
+    }
+
+    .btn-external:hover {
+      background: #e2dacd;
+    }
+
+    .filter-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 3rem 0 1.5rem;
+    }
+
+    .filter-title h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.5rem;
+      color: var(--primary-navy);
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 0.5rem;
+      background: var(--bg-card-accent);
+      padding: 0.3rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.45rem 0.95rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--bg-card);
+      color: var(--primary-navy);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .card:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 8px 16px rgba(27, 42, 74, 0.06);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+
+    .type-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .type-collab {
+      background: var(--badge-team-bg);
+      border: 1px solid var(--badge-team-border);
+      color: var(--badge-team-text);
+    }
+
+    .type-indiv {
+      background: var(--badge-indiv-bg);
+      border: 1px solid var(--badge-indiv-border);
+      color: var(--badge-indiv-text);
+    }
+
+    .type-award {
+      background: var(--badge-award-bg);
+      border: 1px solid var(--badge-award-border);
+      color: var(--badge-award-text);
+    }
+
+    .card-category {
+      font-size: 0.75rem;
+      color: var(--accent-sand);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.6rem;
+      line-height: 1.35;
+    }
+
+    .card-authors {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+      font-style: italic;
+    }
+
+    .card-summary {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .card-metrics {
+      background: var(--code-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+      border-left: 3px solid var(--secondary-teal);
+    }
+
+    .card-metrics strong {
+      color: var(--primary-navy);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tag {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-soft);
+      color: var(--secondary-teal);
+    }
+
+    /* Modal / Ficha Técnica */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(27, 42, 74, 0.5);
+      backdrop-filter: blur(2px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 1.5rem;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: transparent;
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .close-btn:hover {
+      color: var(--primary-navy);
+      background: var(--bg-card-accent);
+    }
+
+    .modal-body h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .modal-body .meta-author {
+      font-size: 0.88rem;
+      color: var(--secondary-teal);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .modal-section {
+      margin-bottom: 1.75rem;
+    }
+
+    .modal-section h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 0.35rem;
+    }
+
+    .modal-section p, .modal-section ul {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .modal-section ul {
+      padding-left: 1.5rem;
+    }
+
+    .modal-section li {
+      margin-bottom: 0.4rem;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.85rem;
+      margin: 1.2rem 0;
+    }
+
+    .metric-box {
+      background: var(--code-bg);
+      border: 1px solid var(--border-soft);
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+    }
+
+    .metric-box .label {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .metric-box .val {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      font-family: 'Fira Code', monospace;
+      margin-top: 0.2rem;
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.88rem;
+    }
+
+    table.data-table th, table.data-table td {
+      border: 1px solid var(--border-soft);
+      padding: 0.6rem 0.85rem;
+      text-align: left;
+    }
+
+    table.data-table th {
+      background: var(--bg-card-accent);
+      color: var(--primary-navy);
+      font-weight: 700;
+    }
+
+    .pbi-preview-container {
+      width: 100%;
+      height: 480px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      margin: 1rem 0;
+    }
+
+    footer {
+      margin-top: 5rem;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge-pill">
+        Facultad de Estadística e Informática · Universidad Veracruzana
+      </div>
+      <h1 class="hero-title">
+        Dalia Abigail Uscanga Gutiérrez<br>
+        <span>Portafolio de Proyectos en Ciencia de Datos</span>
+      </h1>
+
+      <!-- Presentación Estudiantil -->
+      <div class="presentation-box">
+        <h2>Presentación Académica y Profesional</h2>
+        <p class="presentation-text">
+          Estudiante de la <strong>Licenciatura en Ingeniería en Ciencia de Datos</strong> en la Universidad Veracruzana. Mi trabajo se centra en el desarrollo integral de soluciones analíticas y cuantitativas: desde la adquisición, depuración y modelado de datos censales, de gobernanza pública, satelitales y series temporales, hasta la formulación de algoritmos de optimización e inferencia estadística. He colaborado activamente en proyectos presentados en foros académicos y competencias internacionales de datos.
+        </p>
+      </div>
+
+      <div class="contact-bar">
+        <a href="mailto:daliauscanga12@gmail.com" class="btn btn-mail">
+          Contacto Directo: daliauscanga12@gmail.com
+        </a>
+        <a href="https://github.com/daabius" target="_blank" class="btn btn-secondary">
+          GitHub: daabius
+        </a>
+        <div class="btn btn-secondary" style="cursor: default;">
+          Ubicación: Xalapa, Veracruz, México
+        </div>
+      </div>
+    </header>
+
+    <!-- Filtro de Proyectos -->
+    <div class="filter-section">
+      <div class="filter-title">
+        <h2>Proyectos y Evidencias Técnicas</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Estructurados según planteamiento, metodología, métricas y reproducibilidad.</p>
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">Todos los Proyectos (8)</button>
+        <button class="filter-btn" onclick="filterProjects('award', this)">Reconocimientos (2)</button>
+      </div>
+    </div>
+
+    <!-- Grid de Proyectos -->
+    <div class="projects-grid" id="projectsContainer">
+
+      <!-- PROYECTO 1: BARÓMETRO GLOBAL DE DATOS 2024 -->
+      <article class="card" data-category="award">
+        <div>
+          <div class="card-top">
+            <span class="card-category">Gobernanza y Datos Abiertos</span>
+            <span class="type-badge type-award">Segundo Lugar</span>
+          </div>
+          <h3 class="card-title">Evolución de la Protección de Datos en América Latina</h3>
+          <div class="card-authors">
+            David Martínez Galicia, Eidan Enrique Juárez García, Dalia Abigail Uscanga Gutiérrez
+          </div>
+          <p class="card-summary">
+            Análisis comparativo de los marcos normativos y capacidades institucionales de protección de datos personales en América Latina, fundamentado en los indicadores del Barómetro Global de Datos 2024.
+          </p>
+          <div class="card-metrics">
+            <strong>Reconocimiento:</strong> Segundo Lugar Internacional[cite: 7]<br>
+            <strong>Fuente:</strong> Global Data Barometer Data Visualization Challenge 2024/2025
+          </div>
+          <div class="tags">
+            <span class="tag">Global Data Barometer</span>
+            <span class="tag">R</span>
+            <span class="tag">Análisis Cualitativo-Cuantitativo</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+          <a href="https://globaldatabarometer.org/2025/08/announcing-the-winners-of-the-global-data-barometer-data-visualization-challenge/" target="_blank" class="btn btn-external" style="flex: 1; text-align: center;">
+            Anuncio Oficial
+          </a>
+          <button class="btn btn-secondary" style="flex: 1;" onclick="openModal('modal-gdb')">
+            Ficha Técnica
+          </button>
+        </div>
+      </article>
+
+      <!-- PROYECTO 2: DATATHON NASA (Equipo) -->
+      <article class="card" data-category="award">
+        <div>
+          <div class="card-top">
+            <span class="card-category">Big Data Satelital · Visualización</span>
+            <span class="type-badge type-award">Segundo Lugar</span>
+          </div>
+          <h3 class="card-title">Monitoreo Ambiental Integrado con Datos Satelitales NASA</h3>
+          <div class="card-authors">
+            Angel Martinez Mendez, Eidan Enrique Juárez García, Dalia Abigail Uscanga Gutiérrez[cite: 7]
+          </div>
+          <p class="card-summary">
+            Sistema visual interactivo que articula aproximadamente 1 millón de registros de focos de calor VIIRS (FRP), mallas NetCDF de CH4 agropecuario y petrolero, ozono atmosférico y salud forestal (NEE)[cite: 7].
+          </p>
+          <div class="card-metrics">
+            <strong>Reconocimiento:</strong> Segundo Lugar · Datathon Día de los Datos Abiertos 2026[cite: 7]<br>
+            <strong>Herramientas:</strong> Extracción NetCDF en R + Power BI Service[cite: 7]
+          </div>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">R</span>
+            <span class="tag">NetCDF</span>
+            <span class="tag">NASA FIRMS</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiOTVkZGY5NDYtZmY0Ni00ZmE2LTg4NWEtYmQwMTNjZmEwZjNmIiwidCI6IjNjOTA3NjUxLWQ4YzYtNGNhNi1hOGE0LTZhMjQyNDMwZTY1MyIsImMiOjR9" target="_blank" class="btn btn-external" style="flex: 1; text-align: center;">
+            Ver Dashboard
+          </a>
+          <button class="btn btn-secondary" style="flex: 1;" onclick="openModal('modal-datathon')">
+            Ficha Técnica
+          </button>
+        </div>
+      </article>
+
+      <!-- PROYECTO 3: PACIFIC DATA VIZ (Proyecto Presentado) -->
+      <article class="card" data-category="collab">
+        <div>
+          <div class="card-top">
+            <span class="card-category">Visualización Web · Climatología</span>
+            <span class="type-badge type-collab">Proyecto Presentado</span>
+          </div>
+          <h3 class="card-title">Transición Energética y Emisiones en el Pacífico</h3>
+          <div class="card-authors">
+            David Martínez Galicia, Eidan Enrique Juárez García, Dalia Abigail Uscanga Gutiérrez, Angel Martinez Mendez
+          </div>
+          <p class="card-summary">
+            Plataforma web interactiva desarrollada para el Pacific Data Viz Challenge. Analiza series históricas (2000–2023) de consumo energético, renovabilidad y trayectoria de emisiones en la región.
+          </p>
+          <div class="card-metrics">
+            <strong>Concurso:</strong> Pacific Data Viz Challenge<br>
+            <strong>Repositorio:</strong> Consultable en el perfil de GitHub del equipo
+          </div>
+          <div class="tags">
+            <span class="tag">HTML5/CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Data Cartography</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+          <a href="https://github.com/angelzzz123" target="_blank" class="btn btn-external" style="flex: 1; text-align: center;">
+            GitHub de Angel
+          </a>
+          <button class="btn btn-secondary" style="flex: 1;" onclick="openModal('modal-pacific')">
+            Ficha Técnica
+          </button>
+        </div>
+      </article>
+
+      <!-- PROYECTO 4: DEFUNCIONES VERACRUZ ARIMA (Individual) -->
+      <article class="card" data-category="collab">
+        <div>
+          <div class="card-top">
+            <span class="card-category">Demografía · Series de Tiempo</span>
+            <span class="type-badge type-indiv">Individual</span>
+          </div>
+          <h3 class="card-title">Análisis y Pronóstico de Defunciones en Veracruz (1994-2029)</h3>
+          <div class="card-authors">
+            Dalia Abigail Uscanga Gutiérrez[cite: 13]
+          </div>
+          <p class="card-summary">
+            Modelación demográfica mediante la metodología Box-Jenkins sobre 31 años de registros continuos del INEGI[cite: 13]. Identificación del impacto de la pandemia de COVID-19 y proyecciones de estabilidad[cite: 13].
+          </p>
+          <div class="card-metrics">
+            <strong>Especificación:</strong> ARIMA(1,1,0)[cite: 13]<br>
+            <strong>Ajuste Histórico:</strong> MAPE 4.31% | MAE 2,356 defunciones[cite: 13]
+          </div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">statsmodels</span>
+            <span class="tag">Box-Jenkins</span>
+            <span class="tag">INEGI</span>
+          </div>
+        </div>
+        <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;" onclick="openModal('modal-defunciones')">
+          Ver Ficha Técnica Completa
+        </button>
+      </article>
+
+      <!-- PROYECTO 5: ODS 13 CO2 Y CLIMA (Equipo) -->
+      <article class="card" data-category="collab">
+        <div>
+          <div class="card-top">
+            <span class="card-category">Climatología · Estadística Espacial</span>
+            <span class="type-badge type-collab">En Equipo</span>
+          </div>
+          <h3 class="card-title">Emisiones de CO2 y Variación de Temperatura en México (ODS 13)</h3>
+          <div class="card-authors">
+            Dalia Abigail Uscanga Gutiérrez, Eidan Enrique Juárez García, Angel Martinez Mendez, Jesús Hernández[cite: 8]
+          </div>
+          <p class="card-summary">
+            Investigación presentada en el XV Foro Internacional de Estadística Aplicada[cite: 8]. Modelado de la tendencia temporal de emisiones sectoriales (2015-2023) y su correlación con anomalías térmicas[cite: 8].
+          </p>
+          <div class="card-metrics">
+            <strong>Tendencia Lineal:</strong> β̂₁ = -0.063 (p = 0.0023, R² = 0.756)[cite: 8]<br>
+            <strong>Foro:</strong> XV Foro Internacional de Estadística Aplicada[cite: 8]
+          </div>
+          <div class="tags">
+            <span class="tag">R</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Regresión</span>
+            <span class="tag">INECC / NOAA</span>
+          </div>
+        </div>
+        <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;" onclick="openModal('modal-ods13')">
+          Ver Ficha Técnica Completa
+        </button>
+      </article>
+
+      <!-- PROYECTO 6: AZÚCAR SARIMA (Equipo) -->
+      <article class="card" data-category="collab">
+        <div>
+          <div class="card-top">
+            <span class="card-category">Series de Tiempo · Agroindustria</span>
+            <span class="type-badge type-collab">En Equipo</span>
+          </div>
+          <h3 class="card-title">Demanda de Azúcar en México: Modelación SARIMA y Pronóstico</h3>
+          <div class="card-authors">
+            Angel Martinez Mendez, Eidan Enrique Juárez García, Laura Tonil, Dalia Abigail Uscanga Gutiérrez[cite: 1]
+          </div>
+          <p class="card-summary">
+            Modelación Box-Jenkins sobre 168 observaciones mensuales de CONADESUCA (2012-2025)[cite: 1]. Estabilización de varianza mediante Box-Cox y diferenciación estacional[cite: 1].
+          </p>
+          <div class="card-metrics">
+            <strong>Especificación:</strong> SARIMA(1,0,1)(0,1,1)[12][cite: 1]<br>
+            <strong>Métricas:</strong> MAPE 11.26% | MAE 53,958 toneladas[cite: 1]
+          </div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">pmdarima</span>
+            <span class="tag">CONADESUCA</span>
+          </div>
+        </div>
+        <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;" onclick="openModal('modal-azucar')">
+          Ver Ficha Técnica Completa
+        </button>
+      </article>
+
+      <!-- PROYECTO 7: OPTIMIZACIÓN REGRESIÓN (Equipo) -->
+      <article class="card" data-category="collab">
+        <div>
+          <div class="card-top">
+            <span class="card-category">Optimización Heurística · Aprendizaje Automático</span>
+            <span class="type-badge type-collab">En Equipo</span>
+          </div>
+          <h3 class="card-title">Comparación de Algoritmos para el Ajuste de un Modelo Lineal</h3>
+          <div class="card-authors">
+            Dalia Abigail Uscanga Gutiérrez, Eidan Enrique Juárez García, Angel Martinez Mendez[cite: 2]
+          </div>
+          <p class="card-summary">
+            Evaluación experimental de 30 corridas independientes comparando Búsqueda en Profundidad (DFS), Ascenso a la Colina (Hill Climbing) y Algoritmos Genéticos frente a MCO[cite: 2].
+          </p>
+          <div class="card-metrics">
+            <strong>Algoritmo Genético:</strong> ECM 18.92 (0.35s)[cite: 2]<br>
+            <strong>MCO Analítico:</strong> ECM 18.40 (Instantáneo)[cite: 2]
+          </div>
+          <div class="tags">
+            <span class="tag">R / Python</span>
+            <span class="tag">Algoritmo Genético</span>
+            <span class="tag">Hill Climbing</span>
+          </div>
+        </div>
+        <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;" onclick="openModal('modal-optimizacion')">
+          Ver Ficha Técnica Completa
+        </button>
+      </article>
+
+      <!-- PROYECTO 8: ESTILO DE VIDA (Equipo) -->
+      <article class="card" data-category="collab">
+        <div>
+          <div class="card-top">
+            <span class="card-category">Estadística Inferencial · Encuestas</span>
+            <span class="type-badge type-collab">En Equipo</span>
+          </div>
+          <h3 class="card-title">Estilo de Vida y Rendimiento Académico en Ciencia de Datos</h3>
+          <div class="card-authors">
+            Eidan Enrique Juárez García, Angel Martinez Mendez, Dalia Abigail Uscanga Gutiérrez, Dr. Juan Ruiz[cite: 5]
+          </div>
+          <p class="card-summary">
+            Evaluación sobre 62 estudiantes universitarios mediante el instrumento FANTASTIC, analizando la relación entre hábitos de descanso, uso de tecnología y promedio académico[cite: 5].
+          </p>
+          <div class="card-metrics">
+            <strong>Métodos:</strong> Mann-Whitney (p < .05) | Correlación de Spearman[cite: 5]<br>
+            <strong>Hallazgo:</strong> Uso desregulado de tecnología vs. Promedio: r = -0.27[cite: 5]
+          </div>
+          <div class="tags">
+            <span class="tag">R</span>
+            <span class="tag">Instrumento FANTASTIC</span>
+            <span class="tag">Pruebas No Paramétricas</span>
+          </div>
+        </div>
+        <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;" onclick="openModal('modal-estilo')">
+          Ver Ficha Técnica Completa
+        </button>
+      </article>
+
+    </div>
+
+    <footer>
+      <p>Portafolio de Proyectos Académicos y Profesionales · Licenciatura en Ingeniería en Ciencia de Datos</p>
+      <p style="margin-top: 0.25rem;">Facultad de Estadística e Informática · Universidad Veracruzana | Contacto: daliauscanga12@gmail.com</p>
+    </footer>
+  </div>
+
+  <!-- ==================== MODALES ==================== -->
+
+  <!-- MODAL 1: BARÓMETRO GLOBAL DE DATOS -->
+  <div id="modal-gdb" class="modal-backdrop">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal-gdb')">Cerrar ✕</button>
+      <div class="modal-body">
+        <h2>Evolución de la Protección de Datos en América Latina</h2>
+        <div class="meta-author">
+          David Martínez Galicia, Eidan Enrique Juárez García y Dalia Abigail Uscanga Gutiérrez[cite: 7] | Segundo Lugar Internacional
+        </div>
+        
+        <div class="metric-grid">
+          <div class="metric-box"><div class="label">Competencia</div><div class="val">GDB Challenge</div></div>
+          <div class="metric-box"><div class="label">Posición</div><div class="val">🥈 2.º Lugar</div></div>
+          <div class="metric-box"><div class="label">Edición Datos</div><div class="val">Barómetro 2024</div></div>
+        </div>
+
+        <div class="modal-section">
+          <h3>Resumen del Proyecto</h3>
+          <p>
+            Esta investigación analiza de forma sistemática el estado y avance de las políticas de protección de datos personales en los países de América Latina. Utilizando los microdatos y métricas del Barómetro Global de Datos (Global Data Barometer 2024), el equipo evaluó la efectividad de los marcos regulatorios, la autonomía de los organismos de control y las salvaguardas ciudadanas implementadas en la región.
+          </p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Aspectos Metodológicos</h3>
+          <ul>
+            <li><strong>Métricas Analizadas:</strong> Indicadores de gobernanza, capacidad institucional, disponibilidad de datos y salvaguardas de privacidad.</li>
+            <li><strong>Tratamiento de Datos:</strong> Agregación y normalización de puntuaciones de la base regional del Barómetro Global de Datos.</li>
+            <li><strong>Visualización:</strong> Desarrollo de representaciones sintéticas para la interpretación de brechas normativas entre países latinoamericanos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: DEFUNCIONES VERACRUZ -->
+  <div id="modal-defunciones" class="modal-backdrop">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal-defunciones')">Cerrar ✕</button>
+      <div class="modal-body">
+        <h2>Análisis y Pronóstico de Defunciones en el Estado de Veracruz (1994-2029)[cite: 13]</h2>
+        <div class="meta-author">
+          Autora: Dalia Abigail Uscanga Gutiérrez | Experiencia Educativa: Series de Tiempo | Docente: Patricia Díaz Gaspar[cite: 13]
+        </div>
+        
+        <div class="metric-grid">
+          <div class="metric-box"><div class="label">Modelo Seleccionado</div><div class="val">ARIMA(1,1,0)</div></div>
+          <div class="metric-box"><div class="label">Métrica MAPE</div><div class="val">4.31%</div></div>
+          <div class="metric-box"><div class="label">Error Absoluto (MAE)</div><div class="val">2,356 defunciones</div></div>
+          <div class="metric-box"><div class="label">Serie Analizada</div><div class="val">31 Años (1994-2024)</div></div>
+        </div>
+
+        <div class="modal-section">
+          <h3>1. Planteamiento del Estudio</h3>
+          <p>
+            Estudio demográfico centrado en modelar y pronosticar la trayectoria temporal del total de defunciones registradas en el estado de Veracruz[cite: 13]. La serie abarca 31 observaciones anuales provenientes de los registros continuos del Instituto Nacional de Estadística y Geografía (INEGI)[cite: 13].
+          </p>
+        </div>
+
+        <div class="modal-section">
+          <h3>2. Metodología y Pruebas Inferenciales</h3>
+          <ul>
+            <li><strong>Evaluación de Estacionariedad:</strong> La serie original presentó una fuerte tendencia alcista con un p-valor en la prueba Dickey-Fuller Aumentada (ADF) de 1.0000[cite: 13]. Tras aplicar una primera diferenciación (d=1), el estadístico descendió a -4.3364 (p-valor = 0.0004), alcanzando estacionariedad[cite: 13].</li>
+            <li><strong>Selección del Modelo:</strong> Mediante búsqueda exhaustiva en grilla (Grid Search) sobre combinaciones p, q ∈ {0,1,2,3}, se seleccionó la especificación ARIMA(1,1,0) por su consistencia teórica y valores óptimos de AIC (597.03) y BIC (599.83)[cite: 13].</li>
+            <li><strong>Diagnóstico de Residuos:</strong> La prueba de Ljung-Box confirmó la ausencia de autocorrelación serial en los residuos (p-valor = 0.998)[cite: 13]. Las alteraciones en la normalidad (Jarque-Bera p = 0.000) se deben al comportamiento atípico durante el pico pandémico de COVID-19 en 2020-2021 (alcanzando el máximo histórico de 80,220 defunciones)[cite: 13].</li>
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h3>3. Proyecciones (2025-2029)</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Año Proyectado</th>
+                <th>Pronóstico Puntual</th>
+                <th>Límite Inferior (95%)</th>
+                <th>Límite Superior (95%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>2025</strong></td><td>62,437 defunciones</td><td>53,016</td><td>71,858[cite: 13]</td></tr>
+              <tr><td><strong>2026</strong></td><td>62,443 defunciones</td><td>48,500</td><td>76,386[cite: 13]</td></tr>
+              <tr><td><strong>2027</strong></td><td>62,444 defunciones</td><td>45,075</td><td>79,812[cite: 13]</td></tr>
+              <tr><td><strong>2028</strong></td><td>62,444 defunciones</td><td>42,218</td><td>82,669[cite: 13]</td></tr>
+              <tr><td><strong>2029</strong></td><td>62,444 defunciones</td><td>39,718</td><td>85,170[cite: 13]</td></tr>
+            </tbody>
+          </table>
+          <p>
+            Las proyecciones indican una tendencia hacia la estabilización en el nivel post-pandemia de aproximadamente 62,444 defunciones anuales[cite: 13].
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: DATATHON NASA -->
+  <div id="modal-datathon" class="modal-backdrop">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal-datathon')">Cerrar ✕</button>
+      <div class="modal-body">
+        <h2>Monitoreo Ambiental Integrado con Datos Satelitales NASA[cite: 7]</h2>
+        <div class="meta-author">
+          Angel Martinez Mendez, Eidan Enrique Juárez García, Dalia Abigail Uscanga Gutiérrez[cite: 7] | Datathon 2026[cite: 7]
+        </div>
+        <div class="modal-section">
+          <p>
+            Procesamiento e integración espacial de datos satelitales abiertos de la NASA sobre la República Mexicana[cite: 7]. Integración de anomalías térmicas (VIIRS), mallas multidimensionales NetCDF de metano (CH4), trayectoria de masas de ozono y salud forestal (NEE)[cite: 7].
+          </p>
+          <div class="pbi-preview-container">
+            <iframe title="Datathon Power BI" width="100%" height="100%" src="https://app.powerbi.com/view?r=eyJrIjoiOTVkZGY5NDYtZmY0Ni00ZmE2LTg4NWEtYmQwMTNjZmEwZjNmIiwidCI6IjNjOTA3NjUxLWQ4YzYtNGNhNi1hOGE0LTZhMjQyNDMwZTY1MyIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: PACIFIC DATA VIZ -->
+  <div id="modal-pacific" class="modal-backdrop">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal-pacific')">Cerrar ✕</button>
+      <div class="modal-body">
+        <h2>Energy and Emissions in the Pacific: A Climate Data Cartography</h2>
+        <div class="meta-author">
+          David Martínez Galicia, Eidan Enrique Juárez García, Dalia Abigail Uscanga Gutiérrez, Angel Martinez Mendez
+        </div>
+        <div class="modal-section">
+          <h3>Resumen del Proyecto</h3>
+          <p>
+            Desarrollo de una interfaz web e interactiva para la exploración cartográfica de la matriz energética y las emisiones en la cuenca del Pacífico (2000–2023).
+          </p>
+          <p style="margin-top: 1rem;">
+            <a href="https://github.com/angelzzz123" target="_blank" class="btn btn-external">
+              Ver Repositorio y Proyectos en GitHub (angelzzz123)
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 5: ODS 13 CO2 -->
+  <div id="modal-ods13" class="modal-backdrop">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal-ods13')">Cerrar ✕</button>
+      <div class="modal-body">
+        <h2>Emisiones de CO2 y Variación de Temperatura en México (ODS 13)[cite: 8]</h2>
+        <div class="meta-author">
+          Dalia Abigail Uscanga Gutiérrez, Eidan Enrique Juárez García, Angel Martinez Mendez, Jesús Hernández[cite: 8]
+        </div>
+        <div class="modal-section">
+          <p>
+            Análisis econométrico y temporal de emisiones sectoriales (2015-2023) contrastadas con las anomalías de temperatura nacional[cite: 8]. Presentado en el XV Foro Internacional de Estadística Aplicada[cite: 8].
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 6: AZÚCAR SARIMA -->
+  <div id="modal-azucar" class="modal-backdrop">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal-azucar')">Cerrar ✕</button>
+      <div class="modal-body">
+        <h2>Demanda de Azúcar en México: Modelación SARIMA[cite: 1]</h2>
+        <div class="meta-author">
+          Angel Martinez Mendez, Eidan Enrique Juárez García, Laura Tonil, Dalia Abigail Uscanga Gutiérrez[cite: 1]
+        </div>
+        <div class="modal-section">
+          <p>
+            Modelación estocástica sobre 168 observaciones mensuales de CONADESUCA, utilizando especificaciones SARIMA(1,0,1)(0,1,1)[12] para capturar patrones de zafra y demanda[cite: 1].
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 7: OPTIMIZACIÓN REGRESIÓN -->
+  <div id="modal-optimizacion" class="modal-backdrop">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal-optimizacion')">Cerrar ✕</button>
+      <div class="modal-body">
+        <h2>Comparación de Algoritmos para el Ajuste de un Modelo Lineal[cite: 2]</h2>
+        <div class="meta-author">
+          Dalia Abigail Uscanga Gutiérrez, Eidan Enrique Juárez García, Angel Martinez Mendez[cite: 2]
+        </div>
+        <div class="modal-section">
+          <p>
+            Análisis comparativo de convergencia y costo computacional entre algoritmos de búsqueda heurística (AG, Hill Climbing, DFS) y la solución matricial analítica por MCO[cite: 2].
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 8: ESTILO DE VIDA -->
+  <div id="modal-estilo" class="modal-backdrop">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('modal-estilo')">Cerrar ✕</button>
+      <div class="modal-body">
+        <h2>Estilo de Vida y Rendimiento Académico[cite: 5]</h2>
+        <div class="meta-author">
+          Eidan Enrique Juárez García, Angel Martinez Mendez, Dalia Abigail Uscanga Gutiérrez, Dr. Juan Ruiz[cite: 5]
+        </div>
+        <div class="modal-section">
+          <p>
+            Estudio inferencial en estudiantes universitarios analizando factores de salud, descanso y tecnología mediante el instrumento FANTASTIC[cite: 5].
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function filterProjects(type, button) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const cards = document.querySelectorAll('#projectsContainer .card');
+      cards.forEach(card => {
+        if (type === 'all' || card.getAttribute('data-category') === type) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    window.onclick = function(e) {
+      if (e.target.classList.contains('modal-backdrop')) {
+        e.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    }
+  </script>
+</body>
+</html>
